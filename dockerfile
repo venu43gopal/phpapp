@@ -4,7 +4,6 @@ RUN apt-get update
 
 #update  git & repository
 RUN apt-get update -y
-RUN git clone https://github.com/venu43gopal/phpapp.git
 
 #Install Apache2
 RUN apt-get install -y apache2
