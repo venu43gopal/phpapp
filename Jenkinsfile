@@ -1,19 +1,19 @@
 node {
     def app
 
-    stage('Clone repository') {
+    stage('Clone repository from Github') {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
     }
 
-    stage('Build image') {
+    stage('Build image using the latest code') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
         app = docker.build("45787548/phpapp")
     }
 
-    stage('Push image') {
+    stage('Push image to DockerHub') {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
